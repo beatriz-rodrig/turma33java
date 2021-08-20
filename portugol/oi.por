@@ -1,0 +1,38 @@
+programa {
+	funcao inicio (){
+
+	escreva ("OI MUNDO\n")
+	escreva ("NOME COMPLETO:Beatriz rodrigues da silva\n")
+	escreva ("ANO DE NASCIMENTO:1993\n")
+	escreva ("FILME FAVORITO:relatos selvagens\n")
+
+	escreva ("RECEITA DE BOLO\n")
+	//aqui comeca a receita - ingredientes
+
+	//ingredientes
+	cadeia nome
+	inteiro xicaraAcucar //camelcase
+	xicaraAcucar = 2
+
+		escreva("Bom dia, digite o seu nome :")
+		leia(nome)
+		escreva("Digite a quantidade de xicaras :")
+		leia(xicaraAcucar)
+		
+		escreva("bom dia sr "+nome+" o triplo de xicaras é "+(xicaraAcucar*3) )
+
+		
+	}
+}
+
+/* $$$ Portugol Studio $$$ 
+ * 
+ * Esta seção do arquivo guarda informações do Portugol Studio.
+ * Você pode apagá-la se estiver utilizando outro editor.
+ * 
+ * @POSICAO-CURSOR = 268; 
+ * @PONTOS-DE-PARADA = ;
+ * @SIMBOLOS-INSPECIONADOS = ;
+ * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
+ * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
+ */
