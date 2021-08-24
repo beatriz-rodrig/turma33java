@@ -3,11 +3,11 @@ programa
 	
 	funcao inicio()
 	{
-		
+		 //variaveis
 		cadeia nome
-		inteiro anoNascimento, ano
+		inteiro anoNascimento, ano, idade
 		
-	
+		//entradas
 
 		escreva("qual o seu nome?: ")
 		leia(nome)
@@ -15,8 +15,10 @@ programa
 		escreva ("digite ano em que nasceu ")
 		leia (anoNascimento)
 		
-
-		escreva (nome+  " sua idade é " + ( 2021-anoNascimento ) +  " anos." )
+		//processamento 
+		idade = ( 2021-anoNascimento )
+		
+		escreva (nome+  " sua idade é " + idade +  " anos." )
 
 
 		
@@ -29,7 +31,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 280; 
+ * @POSICAO-CURSOR = 275; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
