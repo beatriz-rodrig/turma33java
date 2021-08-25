@@ -1,5 +1,6 @@
 programa
 {
+	inclua biblioteca Matematica
 	
 	funcao inicio()
 	{
@@ -10,24 +11,27 @@ programa
 		//QUAL O VALOR QUE ELA VAI RECEBER
 		//OLÁ, [NOME], VC É O/A DA FAMILIA E VAI RECEBER [XXX] REAIS
 
-
-          cadeia nome 
-		real valorBeneficio, chefe
-		caracter resposta
+		real valorBeneficio, chefe 
+          cadeia nome   
+		caracter resposta 
+		
 
 		escreva (" Digite seu nome:")
 		leia (nome)
 
 		escreva ("Você é a chefe da familia? responda com S-sim ou N-nao: ")
 		leia (resposta)
-		valorBeneficio = 600,00
-		chefe = (600,00*2)
+		valorBeneficio = 600.00
+		chefe = (600.00*2)
 
-        se (resposta == "S" ou "sim"){
+		limpa ()
+		
+
+        se (resposta == "S" e "sim"){
 	 		escreva(" ola " , nome ," voce é a chefe da familia e vai receber" , chefe, "reais") 
         }
 
-        senao (resposta == "N" ou "nao"){
+        senao se (resposta == "N" e "nao"){
         		escreva (" ola" , nome , " voce vai receber" , valorBeneficio, "reais")
         }
         
@@ -38,7 +42,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 724; 
+ * @POSICAO-CURSOR = 624; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
