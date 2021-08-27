@@ -3,16 +3,19 @@ programa
 	
 	funcao inicio()
 	{
+		// variaveis
 		inteiro pontos [4]
 		cadeia times [4], resultado=" " 
-		
+
+		//entradas
 		escreva (" Comecando o paulistinha!!!\n")
 
 		times [0]= " São Paulo "
 		times [1]= " Santos "
 		times [2]= " Palmeiras "
 		times [3]= " Corinthians "
-
+          // processamento
+          
 		para (inteiro y=1; y<4; y++){
 			escreva ("\nRodada de numero" , y , "\n")
 			
@@ -36,9 +39,10 @@ programa
 
 		}
 		}
+		//saida
 			escreva (" Resultados: \n")
 		para (inteiro  x=0; x<4; x++){
-			escreva (times[x],":", pontos [x])
+			escreva (times[x],"tem: ", pontos [x]+ " pontos" )
 			escreva ("\n")
 			
 		}
@@ -52,7 +56,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 822; 
+ * @POSICAO-CURSOR = 1020; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
