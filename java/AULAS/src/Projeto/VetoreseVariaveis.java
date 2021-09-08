@@ -31,15 +31,15 @@ public class VetoreseVariaveis {
 			if (desejaComprar == 's' || desejaComprar == 'S');{
 			
 			for (y=0; y<10; y++) 
-			System.out.println(codigoProduto[y]+"\t" +nomeProduto[y]+"\t"+"R$ " +valorProduto[y]+ "\t"+estoqueProduto[y]+ "\n");
+			System.out.println (codigoProduto[y]+"\t" +nomeProduto[y]+"\t"+"R$ " +valorProduto[y]+ "\t"+estoqueProduto[y]+ "\n");
 			System.out.println("\nExemplo: G2-1 - Tênis Nike \n");
 			System.out.println("SELECIONE O CODIGO DO PRODUTO: ");
-				}
-			
-			
+			codigoEscolhido=leia.next();
+				}	
+		
 		}
-			
-		 codigoEscolhido=leia.next();
+		
+		 
 		 
 		 for (int x=0; x<10; ++x) {
 			 if (codigoEscolhido == codigoProduto[x]) {
