@@ -1,3 +1,9 @@
+/* Larissa, Paulo, Matheus, Beatriz, Fernando, Larissa e Leonardo. 
+ * ECOMMERCE - DEV SHOES
+ 
+ * GENERATION 2021
+ */
+
 package Projeto;
 
 import java.util.Scanner;
