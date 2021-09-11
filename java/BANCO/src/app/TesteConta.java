@@ -2,67 +2,83 @@ package app;
 
 import java.util.Scanner;
 
-import entities.ContaCorrente;
+import entities.Conta;
 import entities.ContaEmpresa;
 import entities.ContaEspecial;
-import entities.ContaEstudantil;
-import entities.ContaPoupanca;
 
 public class TesteConta {
 
 	public static void main(String[] args) {
+		int tipoConta = 4;
+		
+		String nome, cpf="";
+		
 		
 		Scanner leia = new Scanner(System.in);
+		System.out.print("Qual tipo de conta voce vai criar?:");
+
+		System.out.print("1 - CONTA POUPANÇA\r\n" + "2 - CONTA CORRENTE\r\n" + "3 - CONTA ESPECIAL\r\n"
+				+ "4 - CONTA EMPRESA\r\n" + "5 - CONTA ESTUDANTIL\r\n" + "6 - SAIR:");
+
+		tipoConta = leia.next().toUpperCase().charAt(0);
+		System.out.print("Qual seu nome");
+		nome = leia.next();
+		System.out.print("Qual seu cpf");
+		cpf = leia.next();
 		
-		ContaEstudantil cest1 = new ContaEstudantil(14,"123.456.789-55",1000);
-		ContaPoupanca cp1 = new ContaPoupanca(156,"222.333.444-58",5);
-		ContaCorrente cc1 = new ContaCorrente(147,"147.258.369-98",3);
-		ContaEspecial cesp1 = new ContaEspecial(148,"369.258.147",3,1000);
-		ContaEmpresa  cemp1 = new ContaEmpresa(123,"159753852.99",50000);
 		
+		//
+		Conta c1 = new Conta(123, "asdasd");
+		//ContaEstudantil cest1 = new ContaEstudantil(123, cpf, 1000);
+		//ContaPoupanca cp1 = new ContaPoupanca(123, cpf, 5);
+		//ContaCorrente cc1 = new ContaCorrente(123, cpf, 3);
+		ContaEspecial cesp1 = new ContaEspecial(123, cpf, 3, 1000);
+		ContaEmpresa cemp1 = new ContaEmpresa(123,cpf);
+
 		char tipo;
-		double valor=0.00;
+		double valor = 0.00;
 		char op;
 		int dia;
-		for (int x=1; x<=10; x++) {
-			System.out.println("MOVIMENTO "+x);
-			System.out.println("SALDO ATUAL R$ :"+cp1.getSaldo());
-			System.out.print("Movimento D-d�bito ou C-cr�dito ? :");
+		for (int x = 1; x <= 10; x++) {
+			System.out.println("MOVIMENTO " + x);
+			System.out.println("SALDO ATUAL R$ :" + c1.getSaldo());
+			System.out.print("Movimento D-débito , C-crédito ou X-Outra opção? :");
 			tipo = leia.next().toUpperCase().charAt(0);
-			System.out.print("Digite o valor :");
-			valor = leia.nextDouble();
-			if (tipo=='D') {
-				cp1.debito(valor);
-			} 
-			else if (tipo=='C') {
-				cp1.credito(valor);
+			if (tipo == 'X') {
+				if (tipoConta == '1') {
+					cemp1.outraOpcao();
+				} else if (tipoConta == '2') {
+					cemp1.outraOpcao();
+				} else if (tipoConta == '3') {
+					cemp1.outraOpcao();
+				} else if (tipoConta == '4') {
+					cemp1.outraOpcao();
+				}
 			} else {
-				System.out.println("Não foi informado um tipo correto...");
+				System.out.print("Digite o valor :");
+				valor = leia.nextDouble();
+				if (tipo == 'D') {
+					c1.debito(valor);
+				} else if (tipo == 'C') {
+					c1.credito(valor);
+				} else {
+
+					System.out.println("Não foi informado um tipo correto...");
+				}
 			}
 			System.out.println("Continua S/N : ");
 			op = leia.next().toUpperCase().charAt(0);
-			if (op=='N') {
-				
+			if (op == 'N') {
+
 				break;
 			}
-			
+
 		}
-		System.out.println("SALDO ATUALIZADO R$ "+cp1.getSaldo());
-		System.out.println("Informe o dia de hoje :");
-		dia = leia.nextInt();
-		cp1.correcao(dia);
-		System.out.println("SALDO FINAL R$ "+ cesp1.getLimite() + cp1.getSaldo());
-		
-		System.out.println("\n*****************CONTA ESPECIAL*****************");
-		System.out.println("SALDO DA CONTA ESPECIAL: "+cesp1.getLimite());
-		cesp1.getLimite();
-		
-		
-		
-		
-		
-		
-		
+		System.out.println("SALDO ATUALIZADO R$ " + c1.getSaldo());
+		// System.out.println("Informe o dia de hoje :");
+		// dia = leia.nextInt();
+		// c1.correcao(dia);
+		System.out.println("SALDO FINAL R$ " + c1.getSaldo());
 
 	}
 

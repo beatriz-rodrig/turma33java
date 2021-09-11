@@ -1,11 +1,11 @@
 package entities;
 
-public abstract class  Conta {
+public class Conta {
 
 	//atributos
 	private int numero;
 	private String cpf;
-	private double saldo;
+	protected double saldo;
 	private boolean ativo;
 	
 	//construtor
@@ -14,7 +14,6 @@ public abstract class  Conta {
 		super();
 		this.numero = numero;
 		this.cpf = cpf;
-		
 	}
 	
 	//encapsulamento - getters and setters

@@ -1,51 +1,69 @@
 package entities;
 
-public class ContaEspecial extends ContaCorrente {
-	
+import java.util.Scanner;
+
+public class ContaEspecial extends Conta {
+    Scanner leia = new Scanner(System.in);
+
 	//atributos
-	private double limite =1000.00;
+	private double limite=1000.00;
+
+	
 	
 	
 	//construtor
 
+
 	public ContaEspecial(int numero, String cpf, int contadorTalao, double limite) {
-		super(numero, cpf, contadorTalao);
+		super(numero, cpf);
 		this.limite = limite;
 	}
+
+	
 
 	//encapsulamento
 	public double getLimite() {
 		return limite;
 	}
 
-
 	public void setLimite(double limite) {
 		this.limite = limite;
 	}
 	
 	//metodos
-	
-	public double debitar(double valor)
-    {
-    	double saldoComLimite=getSaldo()+limite;
-    	if((saldoComLimite+valor)>=-0)
-    	{
-    		
-    		limite = getSaldo()-valor;
-    		System.out.println("SALDO DISPONIVEL: R$"+limite);
-    		return limite;
-    	}
-    	else
-    	{
-    		System.out.println("Você ultrapassou o seu limite!");
-    		return limite;
-    	}
- 
-    }
-    }
-	
-	
-	
+	@Override
+	public void debito(double valor) {
+		if (valor <= 0) {
+			System.out.println("Valor invalido");
+		} else if (valor <= saldo) {
+			System.out.println("");
+
+			double saldo;
+			saldo = super.getSaldo();
+
+			saldo -= valor;
+			super.debito(valor);
+
+		} else if (valor <= getSaldo() + getLimite()) {
+			System.out.println("Saldo em conta insuficiente para realizar a operaï¿½ï¿½o.");
+			System.out.println("Utilizando " + (valor - getSaldo()) + " do limite.");
+			if (valor > 0) {
+				limite -= (valor - getSaldo());
+				if (getSaldo() > 0) {
+					super.debito(getSaldo());
+				}
+			} else {
+				System.out.println("Seu limite Ã© insuficiente");
+			}
+		}
+		System.out.println("Seu limite atual R$: " + getLimite());
+		
+	}
+
+	 }
+
+
+
 	
 	
 
