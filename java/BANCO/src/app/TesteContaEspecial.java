@@ -6,33 +6,46 @@ import entities.Conta;
 import entities.ContaEspecial;
 
 public class TesteContaEspecial {
-
+	
+	
     public static void main(String[] args) {
-        int tipoConta = 3;
-        String nome, cpf="";
-        
-        
-        Scanner leia = new Scanner(System.in);
+    	
+		Scanner leia = new Scanner(System.in);
+	
+		char resposta;
+		double valorEspecial;
+		char opcao;
+		ContaEspecial cesp1 = new ContaEspecial(03, "123.456.789-10", 3, 1000);
 
-        System.out.print("Qual seu nome");
-        nome = leia.next();
-        System.out.print("Qual seu cpf");
-        cpf = leia.next();
-        //
-        
-        //ContaEstudantil cest1 = new ContaEstudantil(123, cpf, 1000);
-        //ContaPoupanca cp1 = new ContaPoupanca(123, cpf, 5);
-        //ContaCorrente cc1 = new ContaCorrente(123, cpf, 3);
-        // cesp1 = new ContaEspecial(123, cpf, 3, 1000);
-        ContaEspecial cesp1 = new ContaEspecial(tipoConta, cpf, tipoConta, tipoConta);
-        cesp1.credito(100);
-        System.out.println(cesp1.getSaldo());
-        cesp1.debito(200);
-        System.out.println(cesp1.getSaldo());
-        cesp1.getLimite();
-        
+
+    	// Conta Especial
+		
+		System.out.println("\n\tSaldo atual: R$ " + cesp1.getSaldo());
+		if(cesp1.getSaldo() <= 0) {
+		System.out.print("\n\tSeu saldo se encontra no valor de: R$ "+cesp1.getSaldo());
+		System.out.print("\n\n\tVocê possui limite especial disponivel.");
+		System.out.print("\n\tDeseja utilizar? (S/N): ");
+		resposta = leia.next().toUpperCase().charAt(0);
+		if(resposta == 'S') {
+		System.out.print("\n\tDigite o valor desejado (Limite de R$ 1000,00): ");
+		valorEspecial = leia.nextDouble();
+		cesp1.usarLimite(valorEspecial);
+			}
+		}
+		else {
+			System.out.print("\n\tContinuar? (S/N): ");
+		opcao = leia.next().toUpperCase().charAt(0);
+		if (opcao == 'N') {
+		
+			}
+		}
+		
+		System.out.println("\n\tSaldo atual: R$ " + cesp1.getSaldo());
+		
+}
 
 
     }
 
-}
+
+
